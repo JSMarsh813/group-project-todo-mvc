@@ -28,8 +28,13 @@ const PokeSchema = new mongoose.Schema({
   },
   userId: {
     type: String,
-    required: true
+    required: true,
+    
   },
+  description:{
+    type:String,
+    default:"pokemon description"
+  }
   
 })
 
