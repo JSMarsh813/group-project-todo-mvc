@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 // name, height, weight, types, image, ability, attacks
+
 const PokeSchema = new mongoose.Schema({
   name: {
     type: String,
