@@ -30,10 +30,11 @@ module.exports = {
     
     createTodo: async (req, res)=>{
         try{
+            var todoName = req.body.name.charAt(0).toUpperCase() + req.body.name.toLowerCase().slice(1)
             console.log(`create todo`,req.body)
             // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id}) //every todo we create will always have the users id
             await Todo.create({
-                todo: req.body.name, 
+                todo: todoName, 
                 completed: false, 
                 userId: req.user.id,
                 height:req.body.height,
