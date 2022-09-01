@@ -45,6 +45,8 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
         body: JSON.stringify(pokemon)
     })
 
+    location.reload()
+
     // fetch(url)
     //     .then(res => res.json()) // parse response as JSON
     //     .then(async data => {
