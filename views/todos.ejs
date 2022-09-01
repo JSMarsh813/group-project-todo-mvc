@@ -22,13 +22,16 @@
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='added-pokemon'>
-                    <img src="<%= el.image %>" alt="<%= el.todo %>" height="100px">
+                    <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg">
                     <br>
                     <%= el.todo %><br>
-                    <%= el.type %><br> 
-                    <%= el.ability %><br>
-                    <%= el.attacks[0,1] %><br></span>
-                <span id="delete" class='fa fa-trash fa-lg'></span>
+                    ______________________<br> 
+                    Ability: <%= el.ability %><br>
+                    Attacks: <%= el.attacks[0] %>, <%= el.attacks[1] %><br>                  
+                </span>
+                <div class="top-right">
+                <span id="delete" class='fa fa-trash fa-lg' style="color: #a7a7a7;"></span>
+                </div>
             </li>
     <% }) %>    
     </ul>
@@ -60,8 +63,8 @@
 
    <section>
         <h2>Search pokemon to add to collection</h2>
-        <input id="poke-name" type="text" placeholder="Enter Pokemon Name" name='todoItem'>
-        <input id="poke-search" value="Search" type="submit" class="btn">
+        <input id="poke-name" type="text" placeholder="Enter Pokemon Name" name='todoItem' method="POST">
+        <input id="poke-search","save" value="Search" type="submit" class="btn">
    </section>
 
    <section class="poke-list" >
@@ -82,6 +85,9 @@
             <h3 class="description"></h3>    
         </section>
    </section>
+
+
+ 
 
     <script src="js/main.js"></script>
 </body>

@@ -33,6 +33,7 @@ module.exports = {
             var todoName = req.body.name.charAt(0).toUpperCase() + req.body.name.toLowerCase().slice(1)
             console.log(`create todo`,req.body)
             // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id}) //every todo we create will always have the users id
+            
             await Todo.create({
                 todo: todoName, 
                 completed: false, 
