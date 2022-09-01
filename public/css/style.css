@@ -81,7 +81,7 @@ h1{
   
   .todoItem:hover ~ .todoItem {
     position: relative;
-    left: 195px;
+    left: 235px;
     transition: 0.4s ease-out;
   }
 
