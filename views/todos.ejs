@@ -26,6 +26,8 @@
                     <br>
                     <%= el.todo %><br>
                     ______________________<br> 
+                    ht:<%= el.height / 10 %>m, wt:<%= el.weight / 10 %>kg<br>
+
                     Ability: <%= el.ability %><br>
                     Attacks: <%= el.attacks[0] %>, <%= el.attacks[1] %><br>                  
                 </span>
@@ -67,12 +69,12 @@
         <input id="poke-search","save" value="Search" type="submit" class="btn">
    </section>
 
-   <section class="poke-list" >
+
         <!-- <section class="controls">
             <input id="save" type="submit"  value="Save All to Collection">
         </section> -->
     
-        <section class="added-pokemon">
+        <span class="added-pokemon">
             <h2 class="name"></h2>
             <h2 class="weight"></h2>
             <h2 class="height"></h2>
@@ -83,8 +85,8 @@
             <h4 class="error"></h4>
             <img src="" alt="">
             <h3 class="description"></h3>    
-        </section>
-   </section>
+        </span>
+
 
 
  
