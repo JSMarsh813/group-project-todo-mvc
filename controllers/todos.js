@@ -20,11 +20,25 @@ module.exports = {
     
     createTodo: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id}) //every todo we create will always have the users id
-            console.log('Todo has been added!')
+            console.log(`create todo`,req.body)
+            // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id}) //every todo we create will always have the users id
+            await Todo.create({
+                todo: req.body.name, 
+                completed: false, 
+                userId: req.user.id,
+                height:req.body.height,
+                weight:req.body.weight,
+                image:req.body.image,
+                ability:req.body.ability,
+                attacks:req.body.attacks,
+                description:req.body.description
+            }) 
+            console.log('Todo has been added!', req.body)
+            
             res.redirect('/todos')
         }catch(err){
-            console.log(err)
+
+            console.log(`create todo failed`,err)
         }
     },
     markComplete: async (req, res)=>{
