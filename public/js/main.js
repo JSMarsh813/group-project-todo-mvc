@@ -17,7 +17,9 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
   
     const url = `https://pokeapi.co/api/v2/pokemon/${choice}`
 
-    const data = await fetch(url).then(res => res.json()) //poke api fetch
+    const data = await fetch(url).then(res => res.json()).catch(err=>{document.querySelector('.name').innerText = "Pokemon not found. Please try again."})
+    
+    //poke api fetch
 
     console.log(`full data from poke api`,data)
 
