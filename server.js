@@ -1,12 +1,13 @@
-const express = require('express') // import express
-const app = express() 
+
+const express = require('express') //loading express
+const app = express() //can call express easily
 const mongoose = require('mongoose')
-const passport = require('passport') // import authentication
-const session = require('express-session') // import session cookies to keep track of user
+const passport = require('passport')
+const session = require('express-session') //enables them to stay logged in 
 const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
-const logger = require('morgan') // import morgan for logging
-const connectDB = require('./config/database')
+const logger = require('morgan') //console log events on server, can modify it to show you what the request was. What the request was and how long it took to do it
+const connectDB = require('./config/database') 
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 

@@ -1,21 +1,25 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
-const UserSchema = new mongoose.Schema({
+
+const UserSchema = new mongoose.Schema({ //all users will have username, email and password.
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String
 })
 
 
-// Password hash middleware.
+
+// Password hash middleware. //leon didn't write any of this, copy and pasted. Instead of username ect I can change it to something else ectbut not something we're doing from scratch
  
- UserSchema.pre('save', function save(next) {
+ UserSchema.pre('save', function save(next) { //password won't be stored as a plain string, we're going to scramble it up so its stored in our database securely
+
   const user = this
   if (!user.isModified('password')) { return next() }
   bcrypt.genSalt(10, (err, salt) => {
     if (err) { return next(err) }
-    bcrypt.hash(user.password, salt, (err, hash) => {
+
+    bcrypt.hash(user.password, salt, (err, hash) => { //instead of putting plain text in our database, this code scrambles it up so we don't store plain text password
       if (err) { return next(err) }
       user.password = hash
       next()

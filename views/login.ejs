@@ -8,6 +8,7 @@
     <title>Login</title>
 </head>
 <body class="bg-graphic-one">
+
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -23,6 +24,7 @@
         <input type="email" name="email" placeholder="Email"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input class="btn" type="submit">
+
     </form>
 </body>
 </html>

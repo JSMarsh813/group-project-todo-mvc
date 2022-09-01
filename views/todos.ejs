@@ -35,6 +35,51 @@
     <div class="top-right">
     <a href="/logout"><button>Logout</button></a>
     </div>
+
+    <% todos.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span class='del'> Delete </span>
+            </li>
+    <% }) %>    
+    </ul>
+
+    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+
+    <form action="/todos/createTodo" method='POST'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="submit">
+    </form>
+
+
+   <section>
+        <h2>Search pokemon to add to collection</h2>
+        <input id="poke-name" type="text" placeholder="Enter Pokemon Name" name='todoItem'>
+        <input id="poke-search" value="Search" type="submit">
+   </section>
+
+   <section class="poke-list" >
+        <section class="controls">
+            <input id="save" type="submit"  value="Save All to Collection">
+        </section>
+    
+        <section class="added-pokemon">
+            <h2 class="name"></h2>
+            <h2 class="weight"></h2>
+            <h2 class="height"></h2>
+            <h3 class="ability"></h3>
+            <h3 class="type"></h3>
+            <h3 class="class"></h3>
+            <h3 class="attacks"></h3>
+            <h4 class="error"></h4>
+            <img src="" alt="">
+            <h3 class="description"></h3>    
+        </section>
+   </section>
+
+
+    <a href="/logout">Logout</a>
+
     <script src="js/main.js"></script>
 </body>
 </html>
