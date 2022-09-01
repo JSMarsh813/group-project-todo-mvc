@@ -4,6 +4,17 @@ const TodoSchema = new mongoose.Schema({
   todo: {
     type: String,
     required: true,
+// <<<<<<< HEAD
+//   },
+//   completed: {
+//     type: Boolean,
+//     required: true,
+//   },
+//   userId: {
+//     type: String,
+//     required: true
+//   }
+// =======
     defualt:'pokemon name'
   },
   completed: {
@@ -38,6 +49,7 @@ const TodoSchema = new mongoose.Schema({
     default:"pokemon description"
   }
   
+// >>>>>>> b688fee94f7d1fc83dc8fb149a130516cb1f0501
 })
 
 module.exports = mongoose.model('Todo', TodoSchema)

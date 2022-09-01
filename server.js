@@ -1,3 +1,4 @@
+
 const express = require('express') //loading express
 const app = express() //can call express easily
 const mongoose = require('mongoose')
@@ -17,8 +18,9 @@ require('./config/passport')(passport)
 
 connectDB()
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs') //
 app.use(express.static('public'))
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))

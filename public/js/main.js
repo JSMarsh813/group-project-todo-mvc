@@ -1,6 +1,11 @@
-const deleteBtn = document.querySelectorAll('.del')
+const deleteBtn = document.querySelectorAll('#delete')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
+
+// ======= changed del class to delete id in ejs
+// const deleteBtn = document.querySelectorAll('.del')
+// const todoItem = document.querySelectorAll('span.not')
+// const todoComplete = document.querySelectorAll('span.completed')
 
 
 document.querySelector('#poke-search').addEventListener('click', getPokemon)
@@ -131,6 +136,7 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
 // ORIG BELOW
 // ========================================
 
+// >>>>>>> b688fee94f7d1fc83dc8fb149a130516cb1f0501
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
 })
@@ -196,6 +202,4 @@ async function markIncomplete(){
         console.log(err)
     }
 }
-
-
 

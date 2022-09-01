@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokemon Deck</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
+    <% if (user.userName == '' || user.userName == null || user.userName == 'undefined') { %>
+        <% user.userName = 'User'; %>
+        <% } %>
+    <% if (left === 1) { %>
+        <h5><%= user.userName %> has <%= left %> card in the deck</h5>
+    <% } else { %>
+        <h5><%= user.userName %> has <%= left %> cards in the deck</h5>
+    <% } %>  
+    <ul class="container">
+    <% todos.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span id="delete" class='fa fa-trash fa-lg'></span>
+            </li>
+    <% }) %>    
+    </ul>
+    <br>  
+    <h3>Add a new Pokemon to your deck:</h3>
+    <form action="/todos/createTodo" method='POST' autocomplete="off">
+        <input type="text" placeholder="Pokemon Name" name='todoItem'>
+        <input class="btn" type="submit">
+    </form>
+    <div class="top-right">
+    <a href="/logout"><button>Logout</button></a>
+    </div>
+
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
@@ -53,8 +79,6 @@
 
 
     <a href="/logout">Logout</a>
-
-
 
     <script src="js/main.js"></script>
 </body>
