@@ -41,6 +41,7 @@ module.exports = {
                 height:req.body.height,
                 weight:req.body.weight,
                 image:req.body.image,
+                types:req.body.types,
                 ability:req.body.ability,
                 attacks:req.body.attacks,
                 description:req.body.description
