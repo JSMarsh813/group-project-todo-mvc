@@ -1,3 +1,5 @@
+//js folder, main.js
+
 const deleteBtn = document.querySelectorAll('#delete')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
@@ -17,7 +19,9 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
   
     const url = `https://pokeapi.co/api/v2/pokemon/${choice}`
 
-    const data = await fetch(url).then(res => res.json()) //poke api fetch
+    const data = await fetch(url).then(res => res.json()).catch(err=>{document.querySelector('.name').innerText = "Pokemon not found. Please try again."})
+    
+    //poke api fetch
 
     console.log(`full data from poke api`,data)
 
@@ -27,7 +31,8 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
             data.types,
             data.sprites.other["official-artwork"].front_default,
             data.abilities[0].ability.name,
-            data.moves
+            data.moves,
+            data.description
     )  
 
     pokemon.getTypes(data.types)
@@ -36,10 +41,11 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
     document.querySelector('.name').innerText = pokemon.name
     document.querySelector('.height').innerText = `${pokemon.height/10} meters` // divided by 10 due to the weird units pokeapi uses
     document.querySelector('.weight').innerText = `${pokemon.weight/10} kilograms`
-    document.querySelector('.type').innerText=pokemon.types
+    document.querySelector('.type').innerText=pokemon.types.join(', ')
     document.querySelector('img').src = pokemon.image
     document.querySelector('.ability').innerText=pokemon.ability
-    document.querySelector('.attacks').innerText=pokemon.attacks
+    document.querySelector('.attacks').innerText=pokemon.attacks.join(', ')
+    document.querySelector('.description').innerText=pokemon.description
   
     console.log(`pokemon is to send to server `, pokemon)  
     
@@ -50,8 +56,9 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
         body: JSON.stringify(pokemon)
     })
 
-    location.reload()
-
+   location.reload()
+    console.log(pokemon)
+    console.log(data)
     // fetch(url)
     //     .then(res => res.json()) // parse response as JSON
     //     .then(async data => {
@@ -130,6 +137,14 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
           }
         }
       }
+
+      getDescription(arr) {
+        for(let i = arr.length-1; i >= 0; i--) {
+          if(arr[i].language.name === "en") this.description = arr[i].flavor_text
+        }
+      }
+  
+  
   }
 
 // ========================================
