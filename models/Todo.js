@@ -35,6 +35,10 @@ const TodoSchema = new mongoose.Schema({
   description:{
     type:String,
     default:"pokemon description"
+  },
+  completed: { /* favorite, added change here 9/3 */
+    type: Boolean,
+    required: true,
   }
 })
 

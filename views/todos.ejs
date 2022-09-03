@@ -18,21 +18,38 @@
     <% } else { %>
         <h5><%= user.userName %> has <%= left %> cards in the deck</h5>
     <% } %>  
+
     <ul class="container">
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='added-pokemon'>
                     <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg">
                     <br>
+                   
+                              
+
                     <%= el.todo %><br>
                     ______________________<br> 
                     ht:<%= el.height / 10 %>m, wt:<%= el.weight / 10 %>kg<br>
                     Type: <%= el.types[0] %><br>
                     Ability: <%= el.ability %><br>
                     Attacks: <%= el.attacks[0] %>, <%= el.attacks[1] %><br>                  
-                </span>
-                
+                </span>                         
+                  
                 <span id="delete" class="top-right" style="color: #a7a7a7;">x</span>
+
+                                  <!-------########################## Favorite star section start ##########################-->
+
+                                              <!----we are still within the forEach loop for the ul container-->
+
+                <% if(el.completed === true) {%> <!---- check if the pokemon card in an array is flagged as completed/true------->
+                    <span class="fa fa-star favoriteStar completed"></span> <!---if true, create an inline element with a class of completed (yellow star)--->
+                <% }else{ %> 
+                    <span class="fa fa-star favoriteStar"></span> <!--- if it isn't true then show the favorite star WITHOUT the class of completed (blacked out star) ----->
+                <% } %>   
+                 
+                                  <!-------########################## end of favorite star section ##########################-->
+     
                 
             </li>
     <% }) %>    

@@ -164,9 +164,16 @@ input {
 }
 
 .completed{
-    text-decoration: line-through;
-    color: gray;
+   color: yellow;
+  
 }
+
+.favoriteStar {
+    font-weight: 200;
+    position: absolute; /* positions star relative to the flexed todoItem parent aka the card*/
+    top: 7%; 
+    left: 4%;
+  }
 .not{
     text-decoration: none;
 

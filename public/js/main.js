@@ -1,8 +1,8 @@
 //js folder, main.js
 
 const deleteBtn = document.querySelectorAll('#delete')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const todoItem = document.querySelectorAll('span.favoriteStar')//creating a variable and assigning it a nodelist of spans with a favoriteStar class
+const todoComplete = document.querySelectorAll('span.completed')//creating a variable and assigning it a nodelist of spans with a completed class
 
 // ======= changed del class to delete id in ejs
 // const deleteBtn = document.querySelectorAll('.del')
@@ -157,11 +157,12 @@ Array.from(deleteBtn).forEach((el)=>{
 })
 
 Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+    el.addEventListener('click', markComplete)  //event listener for markComplete Button
+    //since todoItem is a nodeList we need to turn it into an array
 })
 
 Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+    el.addEventListener('click', markIncomplete)  //event listener for markIncomplete Button
 })
 
 async function deleteTodo(){
