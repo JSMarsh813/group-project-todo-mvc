@@ -31,7 +31,7 @@
                     <%= el.name %><br>
                     ______________________<br> 
                     ht:<%= el.height / 10 %>m, wt:<%= el.weight / 10 %>kg<br>
-                    Type: <%= el.types[0] %><br>
+                    Type: <%= el.types.length == 2 ? el.types.join(' / ') : el.types[0] %> <br>
                     Ability: <%= el.ability %><br>
                     Attacks: <%= el.attacks[0] %>, <%= el.attacks[1] %><br>                  
                 </span>                         
