@@ -56,6 +56,8 @@ h1{
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
+    background-image: url("../assets/pokemon-card-background.png");
+    /* background image was free use at https://www.deviantart.com/ilkcmp/art/Pokemon-TCG-Colorless-Texture-212727978 */
     background-color: #8b8d99;    
  }
   .todoItem:hover {
