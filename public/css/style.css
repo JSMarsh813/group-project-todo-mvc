@@ -186,14 +186,15 @@ input {
 }
 
 .description {
+    margin: 5px 0;
     font-size: 18px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* border: 1px solid orange; */
+    /* position: absolute;
+    top: 78%;
+    border: 1px solid orange; */
 }
 
 .added-pokemon span {
-    font-size: 21px;
+    font-size: 19px;
 }
 
 .pokeName {
