@@ -11,7 +11,7 @@ module.exports = {
         try{
             const todoItems = await Todo.find({userId:req.user.id})  //only get todos of logged in user
 
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
+            const itemsLeft = await Todo.countDocuments({userId:req.user.id,favorite: false})
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user}) 
 
         }catch(err){
@@ -36,7 +36,7 @@ module.exports = {
             
             await Todo.create({
                 todo: todoName, 
-                completed: false, 
+                favorite: false, 
                 userId: req.user.id,
                 height:req.body.height,
                 weight:req.body.weight,
@@ -55,24 +55,24 @@ module.exports = {
 // >>>>>>> b688fee94f7d1fc83dc8fb149a130516cb1f0501
         }
     },
-    markComplete: async (req, res)=>{
+    markFavorite: async (req, res)=>{
         try{
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
+                favorite: true
             })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
+            console.log('Marked as a favorite card')
+            res.json('Marked as a favorite card')
         }catch(err){
             console.log(err)
         }
     },
-    markIncomplete: async (req, res)=>{
+    markNotFavorite: async (req, res)=>{
         try{
             await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
+                favorite: false
             })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
+            console.log('Marked as not a favorite card/default')
+            res.json('Marked as not a favorite card/default')
         }catch(err){
             console.log(err)
         }

@@ -42,10 +42,10 @@
 
                                               <!----we are still within the forEach loop for the ul container-->
 
-                <% if(el.completed === true) {%> <!---- check if the pokemon card in an array is flagged as completed/true------->
-                    <span class="fa fa-star favoriteStar completed"></span> <!---if true, create an inline element with a class of completed (yellow star)--->
+                <% if(el.favorite === true) {%> <!---- check if the pokemon card in an array is flagged as completed/true------->
+                    <span class="fa fa-star favoriteStar favorite"></span> <!---if true, create an inline element with a class of completed (yellow star)--->
                 <% }else{ %> 
-                    <span class="fa fa-star favoriteStar"></span> <!--- if it isn't true then show the favorite star WITHOUT the class of completed (blacked out star) ----->
+                    <span class="fa fa-star favoriteStar not"></span> <!--- if it isn't true then show the favorite star WITHOUT the class of completed (blacked out star) ----->
                 <% } %>   
                  
                                   <!-------########################## end of favorite star section ##########################-->

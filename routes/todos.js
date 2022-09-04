@@ -7,9 +7,9 @@ router.get('/', ensureAuth, todosController.getTodos)
 
 router.post('/createTodo', todosController.createTodo)
 
-router.put('/markComplete', todosController.markComplete)
+router.put('/markFavorite', todosController.markFavorite)
 
-router.put('/markIncomplete', todosController.markIncomplete)
+router.put('/markNotFavorite', todosController.markNotFavorite)
 
 router.delete('/deleteTodo', todosController.deleteTodo)
 
