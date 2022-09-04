@@ -18,8 +18,10 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
     console.log(choice)
   
     const url = `https://pokeapi.co/api/v2/pokemon/${choice}`
+    const urlForDesc = `https://pokeapi.co/api/v2/pokemon-species/${choice}/`
 
     const data = await fetch(url).then(res => res.json()).catch(err=>{document.querySelector('.name').innerText = "Pokemon not found. Please try again."})
+    const descData = await fetch(urlForDesc).then(res => res.json()).catch(err=>{document.querySelector('.name').innerText = "Pokemon not found. Please try again."})
     
     //poke api fetch
 
@@ -32,11 +34,12 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
             data.sprites.other["official-artwork"].front_default,
             data.abilities[0].ability.name,
             data.moves,
-            data.description
+            descData.description
     )  
 
     pokemon.getTypes(data.types)
     pokemon.getAttacks(data.moves)
+    pokemon.getDescription(descData.flavor_text_entries)
 
     document.querySelector('.name').innerText = pokemon.name
     document.querySelector('.height').innerText = `${pokemon.height/10} meters` // divided by 10 due to the weird units pokeapi uses
@@ -59,6 +62,7 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
    location.reload()
     console.log(pokemon)
     console.log(data)
+    console.log(descData)
     // fetch(url)
     //     .then(res => res.json()) // parse response as JSON
     //     .then(async data => {
@@ -140,7 +144,7 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
 
       getDescription(arr) {
         for(let i = arr.length-1; i >= 0; i--) {
-          if(arr[i].language.name === "en") this.description = arr[i].flavor_text
+          if(arr[i].language.name === "en" && arr[i].flavor_text.length < 100) this.description = arr[i].flavor_text
         }
       }
   

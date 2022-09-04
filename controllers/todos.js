@@ -35,7 +35,7 @@ module.exports = {
             // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id}) //every todo we create will always have the users id
             
             await Todo.create({
-                todo: todoName, 
+                name: req.body.name, 
                 favorite: false, 
                 userId: req.user.id,
                 height:req.body.height,

@@ -22,19 +22,25 @@
     <ul class="container">
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='added-pokemon'>
+                <div class='added-pokemon'>
                     <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg">
-                    <br>
                    
-                              
+                    <span class="pokeName"><%= el.name[0].toUpperCase()+el.name.slice(1) %></span>
+                    
+                    <hr>
 
-                    <%= el.todo %><br>
-                    ______________________<br> 
-                    ht:<%= el.height / 10 %>m, wt:<%= el.weight / 10 %>kg<br>
-                    Type: <%= el.types[0] %><br>
-                    Ability: <%= el.ability %><br>
-                    Attacks: <%= el.attacks[0] %>, <%= el.attacks[1] %><br>                  
-                </span>                         
+                    <span class="pokeStats">Height: <%= el.height/10 %>m / Weight: <%= el.weight/10 %>kg</span><br>
+
+                    <span class="pokeTypes">Type: <%= el.types.length == 2 ? el.types.map(el => el[0].toUpperCase()+el.slice(1)).join(' / ') : el.types[0][0].toUpperCase()+el.types[0].slice(1) %></span><br>
+
+                    <span class="pokeAbility">Ability: <%= el.ability[0][0].toUpperCase()+el.ability[0].slice(1) %></span><br>
+
+                    <span class="pokeAttacks">Attacks: <%= el.attacks[0][0].toUpperCase()+el.attacks[0].slice(1) %>, <%= el.attacks[1][0].toUpperCase()+el.attacks[1].slice(1) %></span><br>
+
+                    <p class="description">
+                        <%= el.description %> 
+                    </p>                  
+                </div>                         
                   
                 <span id="delete" class="top-right" style="color: #a7a7a7;">x</span>
 
