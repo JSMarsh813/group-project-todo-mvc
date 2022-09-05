@@ -143,9 +143,12 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
       }
 
       getDescription(arr) {
-        for(let i = arr.length-1; i >= 0; i--) {
-          if(arr[i].language.name === "en" && arr[i].flavor_text.length < 100) this.description = arr[i].flavor_text
-        }
+        let shortestDesc = arr.filter(el => el.language.name === "en")
+                              .reduce((a, b) => a.length <= b.length ? a : b)
+        this.description = shortestDesc.flavor_text
+        // for(let i = arr.length-1; i >= 0; i--) {
+        //   if(arr[i].language.name === "en" && arr[i].flavor_text.length < 125) this.description = arr[i].flavor_text
+        // }
       }
   
   
