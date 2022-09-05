@@ -10,6 +10,8 @@
 
 </head>
 <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
     <% if (user.userName == '' || user.userName == null || user.userName == 'undefined') { %>
         <% user.userName = 'User'; %>
         <% } %>
@@ -113,7 +115,7 @@
 
 
  
-
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

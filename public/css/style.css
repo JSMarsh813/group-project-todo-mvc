@@ -208,3 +208,11 @@ input {
 hr {
     border: 1px solid black;
 }
+
+#particles-js{ 
+    position: absolute;
+    width: 90%;
+    z-index: -1;
+    overflow: hidden;
+    height: 100%;
+} 
