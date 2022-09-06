@@ -27,7 +27,14 @@
                 <div class='added-pokemon'>
                     <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg">
                    
-                    <span class="pokeName"><%= el.name[0].toUpperCase()+el.name.slice(1) %></span>
+                    <span class="pokeName">
+                        <% if(el?.name){ %>
+                            <%= el.name[0].toUpperCase()+el.name.slice(1)%> %>
+                        <%}else{%>
+                            <%=el.todo%>
+                            <%}%>
+                    
+                    </span>
                     
                     <hr>
 
