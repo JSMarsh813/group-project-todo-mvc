@@ -1,7 +1,10 @@
 # PokéDeck 
 
 This project is dedicated to one of the best stories ever told that influenced millions of kids and adults alike. A CRUD app with local authentication so you can add different Pokemon to your deck to view their abilities and information to plan out your perfect Poke-deck.
+
+
 Link to Project: https://group-poke-project-ui.herokuapp.com/
+
 GIPHY HERE: https://giphy.com/gifs/D0YgDSMm7RfpmJDy92
 
 ---
