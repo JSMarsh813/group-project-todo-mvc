@@ -1,6 +1,6 @@
 # PokéDeck 
 
-This project is dedicated to one of the best stories ever told that influenced millions of kids and adults alike. A CRUD app with local authentication so you can add different Pokemon to your deck to view their abilities and information to plan out your perfect Poke-deck.
+This project is dedicated to one of the best stories ever told that influenced millions of kids and adults alike. A CRUD app with local authentication so you can add different Pokemon to your deck to view their abilities and information to plan out your perfect PokéDeck.
 
 
 Link to Project: https://group-poke-project-ui.herokuapp.com/
@@ -45,6 +45,6 @@ Git branch management is vital to keep track of individual commits as more is co
   - DB_STRING: `your database URI` 
  ---
  
- Have fun building your best Pokemon deck 😎
+ Have fun building your best PokéDeck 😎
 
 
