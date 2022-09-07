@@ -1,28 +1,31 @@
-# Introduction
+# PokéDeck 
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
-
----
-
-> Be sure to add that lovely star 😀 and fork it for your own copy
+This project is dedicated to one of the best stories ever told that influenced millions of kids and adults alike. A CRUD app with local authentication so you can add different Pokemon to your deck to view their abilities and information to plan out your perfect Poke-deck.
+Link to Project: https://group-poke-project-ui.herokuapp.com/
+GIPHY HERE: https://giphy.com/gifs/D0YgDSMm7RfpmJDy92
 
 ---
 
-# Objectives
+# How It's Made:
 
-- It's a beginner level app created to understand how MVC concept and logins are added
-
----
-
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+CSS, JavaScript, EJS, Express.js, Node.js, MongoDB, Mongoose, Sessions, Bcrypt
 
 ---
 
-# Packages/Dependencies used 
+# Optimizations:
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+One function we didn't have time to add to our MVP quite yet is an autocomplete to make it easier to add Pokemon to your deck.
+
+Another functionality being planned out is to make favorites viewable by other users, so you can show off your best Poke squad.
+
+
+---
+
+# Lessons Learned: 
+
+How important structure is for group work - use of sprints and deliverables to push an MVP and to add functionality afterward, frameworks like Kanban for visualizing progress on tasks, etc
+
+Git branch management is vital to keep track of individual commits as more is continually added to the main repo
 
 ---
 
@@ -39,6 +42,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
   - DB_STRING: `your database URI` 
  ---
  
- Have fun testing and improving it! 😎
+ Have fun building your best Pokemon deck 😎
 
 
