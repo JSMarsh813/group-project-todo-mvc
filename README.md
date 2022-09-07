@@ -5,7 +5,7 @@ This project is dedicated to one of the best stories ever told that influenced m
 
 Link to Project: https://group-poke-project-ui.herokuapp.com/
 
-GIPHY HERE: https://giphy.com/gifs/D0YgDSMm7RfpmJDy92
+GIPHY HERE: ![](https://giphy.com/gifs/D0YgDSMm7RfpmJDy92)
 
 ---
 
