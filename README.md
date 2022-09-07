@@ -5,7 +5,7 @@ This project is dedicated to one of the best stories ever told that influenced m
 
 Link to Project: https://group-poke-project-ui.herokuapp.com/
 
-GIPHY HERE: ![](https://github.com/JSMarsh813/group-project-todo-mvc/blob/main/pokemonREADMEgiphy.gif)
+![](https://github.com/JSMarsh813/group-project-todo-mvc/blob/main/pokemonREADMEgiphy.gif)
 
 ---
 
