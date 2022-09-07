@@ -11,7 +11,7 @@ module.exports = {
         try{
             const todoItems = await Todo.find({userId:req.user.id})  //only get todos of logged in user
 
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,favorite: false})
+            const itemsLeft = await Todo.countDocuments({userId:req.user.id})
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user}) 
 
         }catch(err){
