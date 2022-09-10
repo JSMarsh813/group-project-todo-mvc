@@ -7,11 +7,17 @@
     <title>Pokemon Deck</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
+<header>
+    <div class="titleBar"><img src="../assets/logo1.png" style="margin-left: 35px; top: 15px; z-index: 2;">
+        <div class="top-right">
+            <a href="/logout"><button>Logout</button></a>
+            </div>
+        </div>
+</header>
+
 <body>
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
+        <span class="user">
     <% if (user.userName == '' || user.userName == null || user.userName == 'undefined') { %>
         <% user.userName = 'User'; %>
         <% } %>
@@ -20,24 +26,25 @@
     <% } else { %>
         <h5><%= user.userName %> has <%= left %> cards in the deck</h5>
     <% } %>  
-
+        </span>
+        <br><br><br>
     <ul class="container">
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <div class='added-pokemon'>
-                    <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg">
-                   
+
+                  <% var colors = ['#ff0000', '#00ff00', '#0000ff','#ff3333', '#ffff00', '#ff6600']; %>
+                  <% var random_color = colors[Math.floor(Math.random() * colors.length)]; %>
+                                 
+                    <img src="<%= el.image %>" alt="<%= el.todo %>" class="cardImg" background="<%= el.random_color %>"   >                
                     <span class="pokeName">
                         <% if(el?.name){ %>
                             <%= el.name[0].toUpperCase()+el.name.slice(1)%> %>
                         <%}else{%>
                             <%=el.todo%>
-                            <%}%>
-                    
-                    </span>
-                    
-                    <hr>
-
+                            <%}%>                    
+                    </span>                    
+         
                     <span class="pokeStats">Height: <%= el.height/10 %>m / Weight: <%= el.weight/10 %>kg</span><br>
 
                     <span class="pokeTypes">Type: <%= el.types.length == 2 ? el.types.map(el => el[0].toUpperCase()+el.slice(1)).join(' / ') : el.types[0][0].toUpperCase()+el.types[0].slice(1) %></span><br>
@@ -64,7 +71,7 @@
                 <% } %>   
                  
                                   <!-------########################## end of favorite star section ##########################-->
-     
+ 
                 
             </li>
     <% }) %>    
@@ -75,9 +82,7 @@
         <input type="text" placeholder="Pokemon Name" name='todoItem'>
         <input class="btn" type="submit">
     </form> -->
-    <div class="top-right">
-    <a href="/logout"><button>Logout</button></a>
-    </div>
+  
 
     <!-- <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>

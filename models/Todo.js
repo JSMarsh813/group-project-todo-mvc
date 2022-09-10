@@ -39,7 +39,12 @@ const TodoSchema = new mongoose.Schema({
   description:{
     type:String,
     default:"pokemon description"
+  },
+  color: { // this will be background color/shiny property
+    type: String,
+    default:"#f2f2f2",
   }
+
  })
 
 module.exports = mongoose.model('Todo', TodoSchema)

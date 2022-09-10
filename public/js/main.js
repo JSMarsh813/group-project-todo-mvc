@@ -1,8 +1,5 @@
 //js folder, main.js
 
-//ParticlesJS- js package for floating particle stars
-particlesJS("particles-js", {"particles":{"number":{"value":10,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"star","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":true,"speed":0.9589796456570205,"opacity_min":0.07192347342427655,"sync":true}},"size":{"value":1.3,"random":true,"anim":{"enable":false,"speed":3000,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":994.3417221051627,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":false},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
-
 const deleteBtn = document.querySelectorAll('#delete')
 const todoItem = document.querySelectorAll('span.not')//creating a variable and assigning it a nodelist of spans with a NOT class
 const todoComplete = document.querySelectorAll('span.favorite')//creating a variable and assigning it a nodelist of spans with a FAVORITE class
@@ -117,7 +114,7 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
   }
   
   class Poke {
-    constructor (name, height, weight, types, image, ability, attacks) { //the order that the parameters here must be the same order as the parameters in const pokemon= new Poke (this is located above in the fetch and it calls this class constructor)
+    constructor (name, height, weight, types, image, ability, attacks, color) { //the order that the parameters here must be the same order as the parameters in const pokemon= new Poke (this is located above in the fetch and it calls this class constructor)
   
                                                           //the pokemon name is listed first here in the constructor, and so the "data.species.name" parameter is listed first in the new Poke object above, which calls this class constructor
       this.name = name
@@ -144,6 +141,7 @@ document.querySelector('#poke-search').addEventListener('click', getPokemon)
           }
         }
       }
+
 
       getDescription(arr) {
         let shortestDesc = arr.filter(el => el.language.name === "en")
